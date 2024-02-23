@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, FormControl, OutlinedInput, InputAdornment, Button } from '@mui/material';
+import {
+  Box,
+  Typography,
+  FormControl,
+  OutlinedInput,
+  InputAdornment,
+  Button
+} from '@mui/material';
 import TodoList from './TodoList';
 import { Item } from './TodoList';
 
@@ -46,9 +53,10 @@ function Todo() {
   };
 
   return (
-    <Box sx={{p: '8px', width: '100%'}}>
-      <Typography variant='h6' sx={{pl: '10px', pt: '10px' }} >What's the Plan for Today?</Typography>
-      <Box sx={{width: '500px'}}>
+    <Box sx={{ p: '8px', width: '100%' }}>
+      <Typography variant="h6" sx={{ pl: '10px', pt: '10px' }}>What's the Plan
+        for Today?</Typography>
+      <Box sx={{ width: '500px' }}>
         <FormControl sx={{ m: 1, width: '100%' }} variant="outlined" fullWidth>
           <OutlinedInput
             onKeyDown={(e) => {

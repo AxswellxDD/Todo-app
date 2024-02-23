@@ -29,13 +29,15 @@ const TodoList = (props) => {
             fullWidth
             key={item.id}
             secondaryAction={
-              <IconButton edge="end" aria-label="comments" onClick={() => onDelete(item.id)}>
+              <IconButton edge="end" aria-label="comments"
+                          onClick={() => onDelete(item.id)}>
                 <HighlightOffIcon />
               </IconButton>
             }
             disablePadding
           >
-            <ListItemButton role={undefined} onClick={ () => onToggle(item.id)} dense>
+            <ListItemButton role={undefined} onClick={() => onToggle(item.id)}
+                            dense>
               <ListItemIcon>
                 <Checkbox
                   edge="start"
@@ -45,14 +47,15 @@ const TodoList = (props) => {
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} primary={item.title} sx={{textDecoration: item.completed ? 'line-through' : 'none'}} />
+              <ListItemText id={labelId} primary={item.title}
+                            sx={{ textDecoration: item.completed ? 'line-through' : 'none' }} />
             </ListItemButton>
           </ListItem>
         );
       })}
     </List>
   );
-}
+};
 
 export default TodoList;
 export { Item };

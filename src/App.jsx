@@ -1,4 +1,11 @@
-import { FormGroup, FormControlLabel, AppBar, Toolbar, Box, Typography } from '@mui/material';
+import {
+  FormGroup,
+  FormControlLabel,
+  AppBar,
+  Toolbar,
+  Box,
+  Typography
+} from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
@@ -8,14 +15,14 @@ import Todo from './components/Todo';
 
 const darkTheme = createTheme({
   palette: {
-    mode: 'dark',
-  },
+    mode: 'dark'
+  }
 });
 
 const lightTheme = createTheme({
   palette: {
-    mode: 'light',
-  },
+    mode: 'light'
+  }
 });
 
 function App() {
@@ -31,30 +38,31 @@ function App() {
 
   const onThemeChange = (_) => setDarkMode(!darkMode);
 
-
   return (
-      <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-        <CssBaseline />
-          <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-              <Toolbar>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                  List ToDo's
-                </Typography>
-                <Box style={{display: 'flex', alignItems: 'center'}}>
-                  <Typography variant="caption" component="div" sx={{ flexGrow: 1, px: '8px' }}>
-                    {currentTime.toDateString()} {currentTime.toLocaleTimeString()}
-                  </Typography>
-                  <FormGroup>
-                    <FormControlLabel control={<MaterialUISwitch sx={{ m: 1 }} checked={darkMode} onChange={onThemeChange} />} />
-                  </FormGroup>
-                </Box>
-              </Toolbar>
-            </AppBar>
-          </Box>
-        <Todo />
-      </ThemeProvider>
-
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <CssBaseline />
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              List ToDo's
+            </Typography>
+            <Box style={{ display: 'flex', alignItems: 'center' }}>
+              <Typography variant="caption" component="div"
+                          sx={{ flexGrow: 1, px: '8px' }}>
+                {currentTime.toDateString()} {currentTime.toLocaleTimeString()}
+              </Typography>
+              <FormGroup>
+                <FormControlLabel
+                  control={<MaterialUISwitch sx={{ m: 1 }} checked={darkMode}
+                                             onChange={onThemeChange} />} />
+              </FormGroup>
+            </Box>
+          </Toolbar>
+        </AppBar>
+      </Box>
+      <Todo />
+    </ThemeProvider>
   );
 }
 
