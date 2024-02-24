@@ -26,7 +26,7 @@ const TodoList = (props) => {
         return (
           <ListItem
             sx={{ width: '100%' }}
-            fullWidth
+            fullWidth={{width: '100%'}}
             key={item.id}
             secondaryAction={
               <IconButton edge="end" aria-label="comments"
