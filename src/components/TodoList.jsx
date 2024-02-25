@@ -19,15 +19,16 @@ class Item {
 const TodoList = (props) => {
   const { items, onToggle, onDelete } = props;
   return (
-    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-      {(items || []).map((item) => {
+    <List  sx={{ width: '100%', bgcolor: 'background.paper' }}>
+      {(items || []).map((item, i) => {
         const labelId = `checkbox-list-label-${item.id}`;
-
+        
         return (
-          <ListItem
+          <ListItem 
             sx={{ width: '100%' }}
             fullwidth={{width: '100%'}}
-            key={item.id}
+            key={i}
+            name={item.name}
             secondaryAction={
               <IconButton edge="end" aria-label="comments"
                           onClick={() => onDelete(item.id)}>
